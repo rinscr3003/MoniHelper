@@ -252,7 +252,7 @@ namespace MoniHelper
 
         private void WriteBandSuccess()
         {
-            checkBoxGetData.Checked = true;
+            checkBoxWriteBand.Checked = true;
             stepCount++;
             progressBar1.PerformStep();
             richTextBox1.Text = "模拟卡刷写完成，请取下模拟卡，关闭软件。";
@@ -266,7 +266,7 @@ namespace MoniHelper
 
         private void WriteUIDCardSuccess()
         {
-            checkBoxGetData.Checked = true;
+            checkBoxWriteUID.Checked = true;
             stepCount++;
             progressBar1.PerformStep();
             buttonDo.Enabled = true;
