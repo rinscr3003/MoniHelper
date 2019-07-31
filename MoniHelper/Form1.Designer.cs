@@ -40,11 +40,11 @@
             this.checkBoxGetData = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.buttonDo = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -166,9 +166,18 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "操作说明";
+            // 
             // buttonDo
             // 
-            this.buttonDo.Location = new System.Drawing.Point(255, 14);
+            this.buttonDo.Location = new System.Drawing.Point(252, 12);
             this.buttonDo.Name = "buttonDo";
             this.buttonDo.Size = new System.Drawing.Size(75, 23);
             this.buttonDo.TabIndex = 1;
@@ -181,7 +190,7 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Location = new System.Drawing.Point(6, 36);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(249, 139);
+            this.richTextBox1.Size = new System.Drawing.Size(321, 139);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -205,15 +214,6 @@
             this.label3.Size = new System.Drawing.Size(497, 12);
             this.label3.TabIndex = 6;
             this.label3.Text = "本软件仅用于学习研究用途，因不正当使用所造成任何后果与作者无关！由使用人自行负责！";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "说明";
             // 
             // label5
             // 
