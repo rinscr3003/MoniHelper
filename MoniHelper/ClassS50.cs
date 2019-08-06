@@ -341,7 +341,8 @@ namespace MoniHelper
         public void LoadFromMfd(string file)
         {
             if (!File.Exists(file)) { throw new IOException("加载的文件不存在"); }
-            if (new FileInfo(file).Length != 1024) { throw new IOException("加载的S50卡文件大小异常"); }
+            FileInfo fi = new FileInfo(file);
+            if (fi.Length != 1024) { throw new IOException("加载的S50卡文件" + file + "大小" + fi.Length +"异常"); }
             byte[] loadByte = File.ReadAllBytes(file);
             this.Wipe();
             this.SectorsRaw = (byte[])loadByte;

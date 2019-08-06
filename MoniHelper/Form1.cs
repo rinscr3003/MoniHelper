@@ -310,23 +310,22 @@ namespace MoniHelper
                 };
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    if (!Writecheck("work.dump")) { MessageBox.Show("这个文件不正确", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                    if (!Writecheck(ofd.FileName)) { MessageBox.Show("这个文件不正确", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
                     File.Delete("work.dump");
                     File.Copy(ofd.FileName,"work.dump");
                     checkBoxGetData.Checked = true;
                     stepCount++;
                     progressBar1.PerformStep();
+                    richTextBox1.Text = "解析完了，请取下原卡，在设备上面放一张UID卡(注意CUID卡不能用)，点击下一步程序会擦除这张卡并刷写卡号。";
                 }
                 else
                 {
-                    return;
+                    ;
                 }
             }
             else
             {
-                checkBoxGetData.Checked = true;
-                stepCount++;
-                progressBar1.PerformStep();
+                ;
             }
             buttonDo.Enabled = true;
         }
