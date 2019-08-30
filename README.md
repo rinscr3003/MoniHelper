@@ -1,6 +1,7 @@
 # MoniHelper
 模拟卡助手，帮助解决加密门禁卡无法模拟问题。  
 [下载链接](https://github.com/rinscr3003/MoniHelper/releases/latest)  
+### 提醒大家，想MifareOneTool二次开发的千万不要下载master分支上的最新提交，那个代码是别人提交进去的，质量远不及v1.7.0.0原版代码！
 
 * ***********************************************************
 * 模拟助手部分源码借鉴MifareOneTool，
