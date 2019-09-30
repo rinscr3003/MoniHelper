@@ -102,6 +102,8 @@ namespace MoniHelper
                     WriteConfig(myReaders.First());
                     devname = myReaders.First();
                     lDevName.Text = devname;
+                    buttonByPassMode.Enabled = true;
+                    buttonDo.Enabled = true;
                 }
                 else
                 {
@@ -546,6 +548,33 @@ namespace MoniHelper
             else
             {
                 b.ReportProgress(20);
+            }
+        }
+
+        private void ButtonByPassMode_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog
+            {
+                CheckFileExists = true,
+                Filter = "dump文件|*.dump",
+                Title = "使用已有dump数据",
+                Multiselect = false
+            };
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                if (!Writecheck(ofd.FileName)) { MessageBox.Show("这个文件不正确", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
+                File.Delete("work.dump");
+                File.Copy(ofd.FileName, "work.dump");
+                checkBoxChkCard.Checked = true;
+                checkBoxGetData.Checked = true;
+                stepCount=3;
+                progressBar1.PerformStep();
+                buttonByPassMode.Visible = false;
+                richTextBox1.Text = "选择的DUMP文件格式有效。请在设备上面放一张UID卡(注意CUID卡不能用)，点击下一步程序会擦除这张卡并刷写卡号。";
+            }
+            else
+            {
+                ;
             }
         }
     }

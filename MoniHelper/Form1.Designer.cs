@@ -46,6 +46,7 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonByPassMode = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -157,6 +158,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonByPassMode);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.buttonDo);
             this.groupBox2.Controls.Add(this.richTextBox1);
@@ -177,6 +179,7 @@
             // 
             // buttonDo
             // 
+            this.buttonDo.Enabled = false;
             this.buttonDo.Location = new System.Drawing.Point(252, 12);
             this.buttonDo.Name = "buttonDo";
             this.buttonDo.Size = new System.Drawing.Size(75, 23);
@@ -225,6 +228,17 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "需要使用：PN532读写器，UID卡，原门禁卡";
             // 
+            // buttonByPassMode
+            // 
+            this.buttonByPassMode.Enabled = false;
+            this.buttonByPassMode.Location = new System.Drawing.Point(65, 12);
+            this.buttonByPassMode.Name = "buttonByPassMode";
+            this.buttonByPassMode.Size = new System.Drawing.Size(181, 23);
+            this.buttonByPassMode.TabIndex = 10;
+            this.buttonByPassMode.Text = "选择DUMP文件来跳过前两步";
+            this.buttonByPassMode.UseVisualStyleBackColor = true;
+            this.buttonByPassMode.Click += new System.EventHandler(this.ButtonByPassMode_Click);
+            // 
             // FormMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -272,6 +286,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonByPassMode;
     }
 }
 
