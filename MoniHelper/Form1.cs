@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -40,7 +41,7 @@ namespace MoniHelper
             bgw.WorkerReportsProgress = true;
             bgw.ProgressChanged += Res_list_dev;
             bgw.RunWorkerAsync();
-            richTextBox1.Text = "欢迎使用模拟助手！\n模拟助手支持半加密的M1门禁卡片，请等待设备名字显示后，放置您的卡片点下一步进行检测！";
+            richTextBox1.Text = "欢迎使用模拟助手！\n当前软件版本是"+ Assembly.GetExecutingAssembly().GetName().Version.ToString() +"\n模拟助手支持半加密的M1门禁卡片，请等待设备名字显示后，放置您的卡片点下一步进行检测！";
         }
 
         int stepCount = 1;
@@ -565,6 +566,9 @@ namespace MoniHelper
                 if (!Writecheck(ofd.FileName)) { MessageBox.Show("这个文件不正确", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error); return; }
                 File.Delete("work.dump");
                 File.Copy(ofd.FileName, "work.dump");
+                S50 card = new S50();
+                card.LoadFromMfd(ofd.FileName);
+                cardid = card.UIDString;
                 checkBoxChkCard.Checked = true;
                 checkBoxGetData.Checked = true;
                 stepCount=3;

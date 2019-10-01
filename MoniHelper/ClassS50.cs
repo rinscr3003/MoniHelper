@@ -315,6 +315,11 @@ namespace MoniHelper
                 else { _sectors.Add(new Sector()); }
             }
         }
+        public string UIDString
+        {
+            get { return Utils.Hex2Str(this._sectors[0].Block[0].Skip(0).Take(4).ToArray()); }
+        }
+
         public void Wipe()
         {
             for (int i = 0; i < 16; i++)
